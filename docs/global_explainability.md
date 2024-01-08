@@ -163,7 +163,7 @@ We can also split the output of the model into a group defined by the categories
 
 ![](../../assets/images/global_exp_05-gpd_table.png)
 
-![](../../assets/images/global_exp_06-gpd-graph.png)
+![](../../assets/images/global_exp_06-gpd_graph.png)
 
 In the graph equivalent, we can see three lines in each graph, specifying the distribution of mean predictions across each numerical variable according to the categories of the grouped variable. 
 
