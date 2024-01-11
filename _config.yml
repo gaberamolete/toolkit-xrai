@@ -6,9 +6,3 @@ url: https://gaberamolete.github.io/toolkit-xrai/
 
 aux_links:
   Repository: https://github.com/gaberamolete/toolkit-xrai
-
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis"]
-
-math: mathjax
