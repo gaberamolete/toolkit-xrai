@@ -18,7 +18,7 @@ nav_order: 2
 The XRAI Guidelines provide recommendations for specific scenarios. Taking these steps will allow users to deal with these common Data Science problems while also adhering to the XRAI principles. The list below is not exhaustive, but provides a reference point of incorporating the XRAI principles to the Data Science development process.  
 
 1. Data Preprocessing  
-- ****Handle Missing Data**: Decide on a strategy for handling missing values (e.g., impute with mean, median, or a custom value). Document your approach and make sure it doesn't introduce bias or distort the data. 
+- **Handle Missing Data**: Decide on a strategy for handling missing values (e.g., impute with mean, median, or a custom value). Document your approach and make sure it doesn't introduce bias or distort the data. 
 - **Remove Duplicates**: Identify and remove duplicate records if they exist. 
 - **Outlier Detection and Treatment**: Identify outliers using statistical methods or visualizations.  Decide whether to remove, transform, or leave outliers as is based on domain knowledge. 
 - **Data Type Conversion**: Ensure data types are appropriate for analysis (e.g., converting text labels to numerical values). 

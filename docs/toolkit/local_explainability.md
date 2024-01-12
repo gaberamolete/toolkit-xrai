@@ -231,7 +231,7 @@ The waterfall plot explanation shows features each contributing to push the mode
 shap_waterfall(shap_value_loc, idx, feature_names = feature_names, class_ind = 1, class_names = class_names)
 ```
 
-!(../../assets/images/local_exp_15-waterfall1.png)
+![](../../assets/images/local_exp_15-waterfall1.png)
 
 The example above attempts to explain the likelihood of default of a loan applicant. The `f(x)` showcases the probability of the observation to be the "1" class, or in the model's terms, the likelihood to default or have a "Rejected" application. The model's mean predictions are showcased with `E[f(x)]`, a line shooting up from the bottom of the graph. As shown, while the model mostly predicts in the "0" class, or "Accepted" applications, this particular observation has a high probability of rejection, at 0.972. We can see that the main contributors of this likely rejection are the variables `num__total_rec_prncp`, `num__total_pymnt`, and `num__last_pymnt_amnt`, with +0.29, +0.17, and +0.13 respectively.
 

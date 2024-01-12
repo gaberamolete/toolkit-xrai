@@ -67,3 +67,21 @@ There are various methods to compute SHAP values for different types of models, 
 12. **Ensemble Model Interpretation**: SHAP values can be applied to ensemble models to explain their predictions. You can analyze how contributions from individual base models combine to form the ensemble's predictions. 
 
 SHAP provides a comprehensive framework for model interpretation and understanding, and its applications are broad and powerful. Depending on your specific goals, dataset, and model type, you can leverage SHAP values for various techniques to gain insights and transparency into complex machine learning models. 
+
+## Other techniques
+Aside from what was previously mentioned, here are other explainability tools and methods: 
+- Model-specific tools/libraries: 
+    - [Explain Like I’m Five](https://eli5.readthedocs.io/en/latest/overview.html) (ELI5) (sklearn regressors and classifiers, XGBoost, CatBoost, LightGBM, Keras) 
+    - [Activation Atlases](https://distill.pub/2019/activation-atlas/) (for [neural networks](https://github.com/tensorflow/lucid)) 
+    - [What-if Tool](https://github.com/PAIR-code/what-if-tool) (WIT) (TensorFlow models, XGBoost and Scikit-Learn models). 
+- Model-agnostic tools/libraries: 
+    - [skater](https://github.com/GapData/skater) (deep neural networks, tree algorithms, and scalable Bayes) 
+    - [InterpretML](https://interpret.ml/) (LIME, SHAP, linear models, and decision tree) 
+    - [Alibi Explain](https://docs.seldon.io/projects/alibi/en/latest/), used for model inspection and interpretation of black-box and glass-box models, both via local and global explanation methods 
+    - [Rulex Explainable AI](https://www.rulex.ai/) (Logic learning machine) 
+    - [Model Agnostic Language for Exploration and Explanation](https://dalex.drwhy.ai/) (DALEX) (XGBoost, TensorFlow, h2o). 
+- Other explainability techniques: 
+    - **Feature importance analysis/techniques** – This aims at generating a feature score that is directly proportional to the feature’s effect on the overall predictive quality of the model. Examples: mean decrease impurity (MDI), mean decrease accuracy (MDA), single feature importance (SFI). 
+    - **Force dependence plots** – This presents a scatter plot that shows the effect of a single feature on model predictions. 
+    - **Baselines and counterfactuals** – These techniques select a baseline that introduces the concept of a baseline score (to compare against). 
+    - **Causal inferences** – This technique tests the causal relationships based on model outcomes.  
