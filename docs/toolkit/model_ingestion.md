@@ -22,7 +22,7 @@ Import the function from the XRAI package.
 from XRAIDashboard.model_ingestion.data_model import load_data_model
 ```
 
-The `model_ingestion` function requires the file path of the train and test csv files, the models, and the target variable in the data. Set up the file path of the train and test csv files in a variable. For the models, collect all the file_path in a dictionary form, where the keys are the name of the algorithm used. Define the target variable in the selected data.
+The `load_data_model` function requires the file path of the train and test csv files, the models, and the target variable in the data. Set up the file path of the train and test csv files in a variable. For the models, collect all the file_path in a dictionary form, where the keys are the name of the algorithm used. Define the target variable in the selected data.
 
 ```python
 train_data = 'data/property_valuation/train_property_valuation.csv' ## INPUT HERE
@@ -33,7 +33,7 @@ target_feature = 'price_sqm'
 
 ## Data and Model Ingestion
 
-Feed the prepared input to the `model_ingestion` function.
+Feed the prepared input to the `load_data_model` function.
 
 ```python
 X_train, y_train, X_test, y_test, train_data, test_data, model = load_data_model(train_data, test_data, model_path, target_feature)
@@ -46,8 +46,8 @@ The most commonly utilized variable by the tools are the list of continuous and 
 ```python
 cont = X_train.select_dtypes(include = np.number).columns.tolist()
 cat = X_train.select_dtypes(exclude = np.number).columns.tolist()
-reg = True
+reg = True # regression or classification
 ```
 
 ## Notes
-You can opt not to use the model_ingestion function, instead you can import your own data and model using `pandas` and `pickle` package, as long as the returned variables from the model ingestion function is defined.
+You can opt not to use the model_ingestion function, instead you can import your own data and model using `pandas` and `pickle` package, as long as the returned variables from the model ingestion function is defined. Note that the models should also be in a dictionary form, where the keys are the name of the algorithm while the values are the imported model.
