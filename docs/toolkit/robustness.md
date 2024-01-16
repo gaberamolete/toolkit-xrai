@@ -27,7 +27,7 @@ from XRAIDashboard.robustness.art_mia import art_mia, art_generate_predicted, ar
 from XRAIDashboard.robustness.art_metrics import pdtp_generate_samples, pdtp_metric, SHAPr_metric, visualisation
 from XRAIDashboard.robustness.art_extra_models import art_extra_classifiers
 ```
-
+<br>
 Prepare the required data as shown below. Note that this step assumes that all the defined variables in model ingestion are also defined.
 
 ```python
@@ -65,9 +65,9 @@ if not reg:
             '''
     fig1, fig2 = visualisation(leakage, SHAPr_leakage,0,0)
 ```
-
+<br>
 Once the score for each metric is extracted, use the `visualisation` function to visualise the scores. Ideally, we want the scores to be less than zero, signifying that the model is robust and safe from any privacy risks.
-
+<br>
 ![](../../assets/images/robustness-01.PNG)
 
 ## Membership Inference Attack (For Regression Only)
@@ -83,7 +83,7 @@ if reg:
     precision, recall = calc_precision_recall(predicted, actual)
     fig = mia_viz(precision,recall)
 ```
-
+<br>
 The resulting precision and recall shows how accurate the adversarial model in extracting the data. This will be immensely helpful in preventing the leakage of confidential data used in training the model.
-
+<br>
 ![](../../assets/images/robustness-02.PNG)

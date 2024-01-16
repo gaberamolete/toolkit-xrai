@@ -21,7 +21,7 @@ Import the function from the XRAI package.
 ```python
 from XRAIDashboard.model_ingestion.data_model import load_data_model
 ```
-
+<br>
 The `load_data_model` function requires the file path of the train and test csv files, the models, and the target variable in the data. Set up the file path of the train and test csv files in a variable. For the models, collect all the file_path in a dictionary form, where the keys are the name of the algorithm used. Define the target variable in the selected data.
 
 ```python
