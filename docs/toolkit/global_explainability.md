@@ -2,7 +2,7 @@
 layout: default
 title: Global Explainability
 parent: Toolkit
-nav_order: 3
+nav_order: 6
 ---
 
 # Global Explainability

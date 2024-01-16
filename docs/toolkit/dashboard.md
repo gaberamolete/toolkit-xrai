@@ -2,7 +2,7 @@
 layout: default
 title: Dashboard
 parent: Toolkit
-nav_order: 1
+nav_order: 9
 ---
 
 # Dashboard

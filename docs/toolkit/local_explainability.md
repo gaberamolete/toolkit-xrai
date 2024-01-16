@@ -2,7 +2,7 @@
 layout: default
 title: Local Explainability
 parent: Toolkit
-nav_order: 2
+nav_order: 5
 ---
 
 # Local Explainability
