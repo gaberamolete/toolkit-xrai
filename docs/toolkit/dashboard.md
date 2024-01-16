@@ -5,7 +5,7 @@ parent: Toolkit
 nav_order: 1
 ---
 
-# Fairness & Performance
+# Dashboard
 {: .no_toc }
 
 ## Table of contents
