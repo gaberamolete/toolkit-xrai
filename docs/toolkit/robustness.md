@@ -17,7 +17,7 @@ nav_order: 1
 ## Data Preparations
 
 Import the functions from `XRAIDashboard.robustness` and the other necessary functions.
-
+<br>
 ```python
 # Standard libraries
 import numpy as np
@@ -29,7 +29,7 @@ from XRAIDashboard.robustness.art_extra_models import art_extra_classifiers
 ```
 <br>
 Prepare the required data as shown below. Note that this step assumes that all the defined variables in model ingestion are also defined.
-
+<br>
 ```python
 pipe = model['DT'][:-1] #preprocessor pipeline
 X_train_proc = pipe.transform(X_train)
@@ -44,7 +44,7 @@ art_extra_classifiers_dict = art_extra_classifiers({'DT': model['DT']})
 ## Privacy Metric (For Classification Only)
 
 These set of functions make use of the [Adversarial Robustness Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox) to evaluate the classification model in terms of privacy metric, like [Pointwise Differential Training Privacy (PDTP)](https://arxiv.org/abs/1712.09136) and [SHAPr Membership Privacy Risk](http://arxiv.org/abs/2112.02230). Follow the code snippet below to extract the score of your model to these privacy metrics.
-
+<br>
 ```python
 if not reg:
     pdtp_samples = 5
@@ -73,7 +73,7 @@ Once the score for each metric is extracted, use the `visualisation` function to
 ## Membership Inference Attack (For Regression Only)
 
 Coming from [Adversarial Robustness Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox) too, this tool simulates a membership inference attack where it will use a portion of the training data and the model to infer the remaining data. To utilize this, follow this code:
-
+<br>
 ```python
 if reg:
     train_ratio = 0.3

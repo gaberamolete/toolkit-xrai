@@ -17,7 +17,7 @@ nav_order: 1
 ## Data Preparations
 
 Import the EDA functions from `XRAIDashboard.eda` and the other necessary functions.
-
+<br>
 ```python
 # Standard library
 import pandas as pd
@@ -27,7 +27,7 @@ from XRAIDashboard.eda.auto_eda import autoviz_eda2
 ```
 <br>
 Combine everything you want to analyze in a single dataframe using the concatenation method from `pandas` library.
-
+<br>
 ```python
 dataset = pd.concat([train_data, test_data], axis=0)
 ```
@@ -35,7 +35,7 @@ dataset = pd.concat([train_data, test_data], axis=0)
 ## AutoViz
 
 Once the dataset is prepared, just feed it into the `autoviz_eda2` function. Note that this process will take long for large datasets.
-
+<br>
 ```python
 autoviz_eda2(dataset)
 ```
@@ -65,7 +65,7 @@ This command will generate 5 HTML reports that will show different visualization
 ## Y-Data Profiling
 
 Similar to AutoViz, you just also need to feed the concatenated dataframe to the `ydata_profiling` function. Note also that large datasets would also mean longer processing time, and larger size for the HTML report, which may crash the cloud computing platform if you're using one.
-
+<br>
 ```python
 from XRAIDashboard.eda.auto_eda import ydata_profiling_eda2
 
@@ -73,11 +73,11 @@ ydata_profiling_eda2(dataset)
 ```
 <br>
 This will output a comprehensive HTML report on the data as showcased below
-
+<br>
 ![](../../assets/images/eda_06.PNG)
-
+<br>
 ![](../../assets/images/eda_07.PNG)
-
+<br>
 ![](../../assets/images/eda_08.PNG)
 
 
