@@ -2,7 +2,7 @@
 layout: default
 title: Fairness & Performance
 parent: Toolkit
-nav_order: 1
+nav_order: 4
 ---
 
 # Fairness & Performance

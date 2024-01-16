@@ -2,7 +2,7 @@
 layout: default
 title: Uncertainty
 parent: Toolkit
-nav_order: 1
+nav_order: 3
 ---
 
 # Uncertainty
