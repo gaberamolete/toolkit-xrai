@@ -79,7 +79,7 @@ ydata_profiling_eda2(dataset)
 ```
 
 
-This will output a comprehensive HTML report on the data as showcased below
+This will output a comprehensive HTML report on the data as showcased below.
 
 
 ![](../../assets/images/eda_06.PNG)
