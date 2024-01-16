@@ -302,4 +302,6 @@ elif not reg:
 
 This will generate a local link that you can use to run the dashboard on a browser.
 
-![](../../assets/images/XRAI_Teaser - shortened.mp4)
+<video width="320" height="240" controls>
+  <source src="./../assets/images/XRAI_Teaser - shortened.mp4" type="video/mp4">
+</video>
