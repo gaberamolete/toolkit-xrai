@@ -17,7 +17,8 @@ nav_order: 1
 ## Data Preparations
 
 Import the functions from `XRAIDashboard.robustness` and the other necessary functions.
-<br>
+
+
 ```python
 # Standard libraries
 import numpy as np
@@ -27,9 +28,11 @@ from XRAIDashboard.robustness.art_mia import art_mia, art_generate_predicted, ar
 from XRAIDashboard.robustness.art_metrics import pdtp_generate_samples, pdtp_metric, SHAPr_metric, visualisation
 from XRAIDashboard.robustness.art_extra_models import art_extra_classifiers
 ```
-<br>
+
+
 Prepare the required data as shown below. Note that this step assumes that all the defined variables in model ingestion are also defined.
-<br>
+
+
 ```python
 pipe = model['DT'][:-1] #preprocessor pipeline
 X_train_proc = pipe.transform(X_train)
@@ -44,7 +47,8 @@ art_extra_classifiers_dict = art_extra_classifiers({'DT': model['DT']})
 ## Privacy Metric (For Classification Only)
 
 These set of functions make use of the [Adversarial Robustness Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox) to evaluate the classification model in terms of privacy metric, like [Pointwise Differential Training Privacy (PDTP)](https://arxiv.org/abs/1712.09136) and [SHAPr Membership Privacy Risk](http://arxiv.org/abs/2112.02230). Follow the code snippet below to extract the score of your model to these privacy metrics.
-<br>
+
+
 ```python
 if not reg:
     pdtp_samples = 5
@@ -65,15 +69,18 @@ if not reg:
             '''
     fig1, fig2 = visualisation(leakage, SHAPr_leakage,0,0)
 ```
-<br>
+
+
 Once the score for each metric is extracted, use the `visualisation` function to visualise the scores. Ideally, we want the scores to be less than zero, signifying that the model is robust and safe from any privacy risks.
-<br>
+
+
 ![](../../assets/images/robustness-01.PNG)
 
 ## Membership Inference Attack (For Regression Only)
 
 Coming from [Adversarial Robustness Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox) too, this tool simulates a membership inference attack where it will use a portion of the training data and the model to infer the remaining data. To utilize this, follow this code:
-<br>
+
+
 ```python
 if reg:
     train_ratio = 0.3
@@ -83,7 +90,9 @@ if reg:
     precision, recall = calc_precision_recall(predicted, actual)
     fig = mia_viz(precision,recall)
 ```
-<br>
+
+
 The resulting precision and recall shows how accurate the adversarial model in extracting the data. This will be immensely helpful in preventing the leakage of confidential data used in training the model.
-<br>
+
+
 ![](../../assets/images/robustness-02.PNG)
