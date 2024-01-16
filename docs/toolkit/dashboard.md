@@ -305,5 +305,3 @@ This will generate a local link that you can use to run the dashboard on a brows
 <p align="center">
   <img src="../../assets/images/XRAI_Teaser - shortened.gif">
 </p>
-
-![](../../assets/images/XRAI_Teaser - shortened.gif)
