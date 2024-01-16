@@ -302,4 +302,4 @@ elif not reg:
 
 This will generate a local link that you can use to run the dashboard on a browser.
 
-![](../../../assets/images/XRAI_Teaser - shortened.gif)
+![](../../assets/images/XRAI_Teaser - shortened.gif)
