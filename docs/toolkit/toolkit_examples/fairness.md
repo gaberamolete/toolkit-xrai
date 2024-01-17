@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Fairness & Performance
-parent: Toolkit
+parent: XRAI Toolkit Examples
+grand_parent: Toolkit
 nav_order: 4
 ---
 
@@ -68,7 +69,7 @@ elif not reg:
 ```
 
 
-![](../../assets/images/fairness_01.PNG)
+![](../../../assets/images/fairness_01.PNG)
 
 
 To include the `xextra` dataframe defined earlier, just input it in the xextra parameter.
@@ -167,12 +168,12 @@ if not reg:
 ```
 
 
-![](../../assets/images/fairness_02.PNG)
+![](../../../assets/images/fairness_02.PNG)
 ### Bias Mitigation
-![](../../assets/images/fairness_03.PNG)
+![](../../../assets/images/fairness_03.PNG)
 
 
-![](../../assets/images/fairness_04.PNG)
+![](../../../assets/images/fairness_04.PNG)
 #### Disparate Impact Remover
 Disparate impact remover is a preprocessing technique that edits feature values increase group fairness while preserving rank-ordering within groups [1].
 
@@ -254,7 +255,7 @@ if not reg:
     fig
 ```
 
-![](../../assets/images/fairness_05.PNG)
+![](../../../assets/images/fairness_05.PNG)
 
 
 ### Performance
@@ -273,4 +274,4 @@ elif not reg:
 ```
 
 
-![](../../assets/images/fairness_06.PNG)
+![](../../../assets/images/fairness_06.PNG)

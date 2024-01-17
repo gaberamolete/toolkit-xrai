@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Dashboard
-parent: Toolkit
+parent: XRAI Toolkit Examples
+grand_parent: Toolkit
 nav_order: 9
 ---
 
@@ -66,7 +67,6 @@ X_train, y_train, X_test, y_test, train_data, test_data, model = load_data_model
 
 cont = X_train.select_dtypes(include = np.number).columns.tolist()
 cat = X_train.select_dtypes(exclude = np.number).columns.tolist()
-
 reg = True
 ```
 
@@ -300,8 +300,10 @@ elif not reg:
         print(e)
 ```
 
-This will generate a local link that you can use to run the dashboard on a browser.
+This will generate a local link that you can use to run the dashboard on a browser. Below is a short gif that showcases what the dashboard should look like upon running.
 
-<p align="center">
-  <img src="../../assets/images/XRAI_Teaser - shortened.gif">
-</p>
+<!-- <p align="center">
+  <img src="../../../assets/images/XRAI_Teaser - shortened.gif">
+</p> -->
+
+![](../../../assets/images/XRAI_Teaser - shortened.gif)

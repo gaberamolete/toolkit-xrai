@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Global Explainability
-parent: Toolkit
+parent: XRAI Toolkit Examples
+grand_parent: Toolkit
 nav_order: 6
 ---
 
@@ -131,11 +132,11 @@ The `pd_profile()` function calculates profiles for all continuous variables by 
 - `_label_`: The name of the model trained and evaluated
 - `_x_` and `_yhat_`: The positions of the ceteris paribus line on the graph
 
-![](../../assets/images/global_exp_01-pd_table.png)
+![](../../../assets/images/global_exp_01-pd_table.png)
 
 Below is the table's equivalent on a graph.
 
-![](../../assets/images/global_exp_02-pd_graph.png)
+![](../../../assets/images/global_exp_02-pd_graph.png)
 
 The x-axis gives us the range of values for the specified explanatory variable, while the y-axis tells us the average prediction (intercept) of the model. In this particular example, we can see that below values of 1 million, the average model prediction is set to go lower by around 0.004, before going up again to an average of 0.156.
 
@@ -147,11 +148,11 @@ We can obtain profiles for categorical variables by specifying the `variable_typ
 
 The table created by calling the `.result` function showcases summarized results of all categories under each categorical variable:
 
-![](../../assets/images/global_exp_03-pd_table_categ.png)
+![](../../../assets/images/global_exp_03-pd_table_categ.png)
 
 We see each categorical variable in the `_vname_` column, with specific categories under `_x_`. We are also given a `_yhat_` column which showcases the mean predictions of that variable-category combination in the model. The equivalent plot is shown below:
 
-![](../../assets/images/global_exp_04-pd_graph_categ.png)
+![](../../../assets/images/global_exp_04-pd_graph_categ.png)
 
 Notice that the graphs vary from the numerical model profiles, as we aren't looking at continuous variables anymore. Each bar represents a category within that explanatory variable, and showcases its difference for average predictions. Above, we can see that `MORTGAGE`-based home ownerships generally have less probability of default compared to those who `OWN`, have `NONE`, or have `OTHER` means of home ownerships. 
 
@@ -162,9 +163,9 @@ pd_profile(exp, groups = 'home_ownership', variables = ['annual_inc', 'int_rate'
 
 We can also split the output of the model into a group defined by the categories of an explanatory variable. We utilize the `groups` argument and specify a categorical variable, with which the the table and graphs add an additional label. In the image below, we can see that there are different `_label_` outputs, which specify the different categories within the group of `home_ownership`.
 
-![](../../assets/images/global_exp_05-gpd_table.png)
+![](../../../assets/images/global_exp_05-gpd_table.png)
 
-![](../../assets/images/global_exp_06-gpd_graph.png)
+![](../../../assets/images/global_exp_06-gpd_graph.png)
 
 In the graph equivalent, we can see three lines in each graph, specifying the distribution of mean predictions across each numerical variable according to the categories of the grouped variable. 
 
@@ -186,11 +187,11 @@ If we remove certain explanatory variables from a model, by how much will the mo
 
 The table below showcases a summary of the drop-out loss from each variable if they were removed from the model. In the example above, it displays that if the `total_rec_prncp` variable was removed from the model, the model would incur an additional drop-out loss of around +0.004.
 
-![](../../assets/images/global_exp_07-vi_table.png)
+![](../../../assets/images/global_exp_07-vi_table.png)
 
 The equivalent graph showcases the variable importance in descending order. As seen in the table, we have `total_rec_prncp` as the most important variable, with `recoveries` and `last_pymnt_amnt` as slightly important as well. However, we can see that the rest of the variables has relatively little impact on the drop-out loss of the model. This seems to suggest that the RandomForestClassifier is quite reliant only on 3-4 main variables. This can be good or bad depending on the data availability and accuracy of the model. 
 
-![](../../assets/images/global_exp_08-vi_graph.png)
+![](../../../assets/images/global_exp_08-vi_graph.png)
 
 ```python
 # Grouped variable-importance measures
@@ -206,11 +207,11 @@ At times, variables are grouped together to see their contribution or influence 
 
 We can now output a shorter table with only the grouped variables considered and their respective drop-out losses. 
 
-![](../../assets/images/global_exp_09-gvi_table.png)
+![](../../../assets/images/global_exp_09-gvi_table.png)
 
 The equivalent graph will also only showcases these variables. As seen in the table, the drop-out loss for the grouped `categorical` variable is insignificant, thus barely shows in the graph.
 
-![](../../assets/images/global_exp_10-gvi_graph.png)
+![](../../../assets/images/global_exp_10-gvi_graph.png)
 
 *Warning:* Technically, an explanatory variable may be put into more than one group by the user. This will still output a table and graph, but will be misleading as the same variables shouldn't appear twice on the model. By default, the function does not also make another "group" composing of the remaining unnamed explanatory variables, so please be careful when extracting conclusions from this portion.
 
@@ -221,31 +222,31 @@ While partial-dependence profiles are easy to explain, they may be misleading if
 
 The visualization below showcases the differences between ceteris-paribus profiles (CP), partial-dependence profiles (PD), local-dependence profiles (LD), and accumulated-local profiles (AL).
 
-![](../../assets/images/global_exp_11-ldal.png)
+![](../../../assets/images/global_exp_11-ldal.png)
 
 ```python
 # Local Dependence
 ld_profile(exp, variables = ['annual_inc', 'int_rate'])
 ```
-![](../../assets/images/global_exp_12-ld_graph.png)
+![](../../../assets/images/global_exp_12-ld_graph.png)
 
 ```python
 # Accumulated Local
 al_profile(exp, variables = ['annual_inc', 'int_rate'])
 ```
 
-![](../../assets/images/global_exp_13-al_graph.png)
+![](../../../assets/images/global_exp_13-al_graph.png)
 
 ```python
 # Compare profiles
 compare_profiles(exp, variables = ['annual_inc', 'int_rate'])
 ```
 
-![](../../assets/images/global_exp_14-compare_graphs.png)
+![](../../../assets/images/global_exp_14-compare_graphs.png)
 
 To visualize the differences between the three proposed methods, we can plot all three in the same graph output. As shown below, we have two graphs describing the explanatory variables `annual_inc` and `int_rate` over three types of profiling methods. We see that the PD and AL profiles have slightly differing distributions, while the LD profile has a lower and decreasing distribution for `annual_inc`, and steadily increasing distribution for `int_rate`.
 
-![](../../assets/images/global_exp_15-compare_graphs2.png)
+![](../../../assets/images/global_exp_15-compare_graphs2.png)
 
 Note each of these three plots only suggest potential influence of explanatory variables to model output. It is a good practice to showcase these three plots together when trying to determine whether a certain explanatory variable indeed has a signficant influence. Case in point, if we only saw the LD profile of `int_rate`, we might have concluded that the variable has a positively correlating effect mean prediction. Only by comparing it with its PD and AL profiles can we see that this influence may be exaggerated. 
 
@@ -256,7 +257,7 @@ This takes the average of the SHAP value magnitudes across the dataset and plots
 shap_bar_glob(shap_values_glob, X_train_proc, feature_names = feature_names, class_ind = 0, class_names = class_names, reg = False)
 ```
 
-![](../../assets/images/global_exp_16-bar_plot.png)
+![](../../../assets/images/global_exp_16-bar_plot.png)
 
 This also takes into account the preprocessed versions of your columns, hence the naming of the features.
 
@@ -269,14 +270,14 @@ Note that when the scatter points don’t fit on a line they pile up to show den
 shap_summary(shap_values_glob, X_train_proc, feature_names = feature_names, class_ind = 0, class_names = class_names)
 ```
 
-![](../../assets/images/global_exp_17-summary_plot.png)
+![](../../../assets/images/global_exp_17-summary_plot.png)
 
 The color represents the feature value (<font color = 'red'>red for **high**</font>, <font color = 'blue'> blue for *low*</font>). In the example above, the plot reveals that low values of `num__last_pymnt_amnt` mostly have contribute to 0 or "Accepted" class. In `num_recoveries`, high values (or applicants with high amounts of recoveries) tend to have "Accepted" class as well, and some low values (applicants with low amounts of recoveries) have a slight positive contribution to the model (or may be in the "Rejected" class).
 
 ## Dependence Plot
 We can also run a plot for SHAP interaction values to observe its main effects and interaction effects with other variables. We can look at it in two ways: 1) by comparing the original variable to its SHAP values, and 2) by directly looking at another variable. Note that we may have to specify the class of the target variable if we are working with a classification model, as seen below.
 
-![](../../assets/images/global_exp_18-dep_shap.png)
+![](../../../assets/images/global_exp_18-dep_shap.png)
 
 In this example above, we look at the dependence plot between `num__last_pymnt_amnt` and its SHAP values. We can see that the SHAP value mostly stays at around 0.05 for values [0, 4), except at ranges [-1, 0], where the SHAP value increases from -0.20 to 0.05.
 
@@ -342,7 +343,7 @@ shap_dependence(shap_values_glob, X_train_proc, 'num__last_pymnt_amnt', feature_
                     class_names = class_names, int_ind = 'num__recoveries')
 ```
 
-![](../../assets/images/global_exp_19-dep_shap2.png)
+![](../../../assets/images/global_exp_19-dep_shap2.png)
 
 The difference in colors showcases the normalized ranges of `num_recoveries`. We can see that the high values of `num_recoveries` mostly come at the [-1, 0] range of `num__last_pymnt_amnt`, thus is not affected nor correlated significantly.
 
@@ -354,4 +355,4 @@ Note that this graph is interactive.
 ```python
 shap_force_glob(exp_glob, shap_values_glob, X_train_proc, feature_names = feature_names, class_ind = 0, class_names = class_names)
 ```
-![](../../assets/images/global_exp_20-force_plot.png)
+![](../../../assets/images/global_exp_20-force_plot.png)

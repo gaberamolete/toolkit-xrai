@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Model Ingestion
-parent: Toolkit
+parent: XRAI Toolkit Examples
+grand_parent: Toolkit
 nav_order: 1
 ---
 
