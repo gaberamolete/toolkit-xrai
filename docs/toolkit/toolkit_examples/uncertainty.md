@@ -534,7 +534,7 @@ calibs_df = calib_metrics(y_test, calibs, n_bins)
 calibs_df
 ```
 
-![](../../../assets/images/uncertainty_01-calib_table.png)
+![](../../../assets/images/uncertainty_01-calib_table.PNG)
 
 ### Reliability Diagram
 A reliability diagram is a graphical tool used to visually assess the calibration performance of a predictive model. It helps in evaluating how well a model's predicted probabilities align with the actual observed frequencies or outcomes.
@@ -555,19 +555,19 @@ for k, v in calibs.items():
     fig = plot_reliability_diagram(y_test, v[0], v[1], title = k, error_bars = True, n_bins = 50)
 ```
 
-![](../../../assets/images/uncertainty_02-rd_logistic.png)
+![](../../../assets/images/uncertainty_02-rd_logistic.PNG)
 
-![](../../../assets/images/uncertainty_03-rd_beta.png)
+![](../../../assets/images/uncertainty_03-rd_beta.PNG)
 
-![](../../../assets/images/uncertainty_04-rd_temp.png)
+![](../../../assets/images/uncertainty_04-rd_temp.PNG)
 
-![](../../../assets/images/uncertainty_05-rd_hb.png)
+![](../../../assets/images/uncertainty_05-rd_hb.PNG)
 
-![](../../../assets/images/uncertainty_06-rd_ir.png)
+![](../../../assets/images/uncertainty_06-rd_ir.PNG)
 
-![](../../../assets/images/uncertainty_07-rd_bbq.png)
+![](../../../assets/images/uncertainty_07-rd_bbq.PNG)
 
-![](../../../assets/images/uncertainty_08-rd_enir.png)
+![](../../../assets/images/uncertainty_08-rd_enir.PNG)
 
 
 These plots visualize over- and underconfidence with the re-calibrated scores, while also displaying an estimaetd Miscalibrated Area. Candlesticks at positions around the diagonal also express likely locations of outcomes under the mentioned probability.
@@ -582,4 +582,4 @@ agc = uct_plot_adversarial_group_calibration(uct_metrics)
 agc
 ```
 
-![](../../../assets/images/uncertainty_09-agc.png)
+![](../../../assets/images/uncertainty_09-agc.PNG)
