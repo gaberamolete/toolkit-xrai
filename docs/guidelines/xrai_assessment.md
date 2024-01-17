@@ -50,7 +50,7 @@ The final risk assessment will be determined by combining model interpretation w
 - **Regulatory impact** – DSAI models may be of higher risk because of regulatory exposure of their decision-making, such as phishing or mule detection 
 - **Options for recourse available** – if there are efficient and effective ways for customers or other stakeholders to challenge or change DSAI system’s decisions, then the associated risks may be lower 
 
-A sample table below is provided as a template for assessing the risk level for XRAI methodologies. Identifiers and conditions that will contribute to each risk category, including human behavior, data privacy/ security issues, environment conditions, technical failures, etc. must be stated in “Related Risks”, so that “Risk Level” can be properly labelled as “Low”, “Medium”, or “High”. A comprehensive assessment will help to effectively manage and mitigate risks, when they occur.
+A sample table below is provided as a template for assessing the risk level for XRAI methodologies. Identifiers and conditions that will contribute to each risk category, including human behavior, data privacy/ security issues, environment conditions, technical failures, etc. must be stated in “Related Risks”, so that “Risk Level” can be properly labelled as “Low”, “Medium”, or “High”. A comprehensive assessment will help to effectively manage and mitigate risks, when they occur. This table is also accessible via document in our [GitHub repo](https://github.com/gaberamolete/toolkit-xrai/blob/main/Risk%20Assessment%20for%20XRAI%20Methodology.docx).
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
