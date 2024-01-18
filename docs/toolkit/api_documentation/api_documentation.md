@@ -8,4 +8,4 @@ permalink: /docs/toolkit/api_documentation
 ---
 
 # XRAI API Documentation
-Hello! This section is a work in progress.
+This section contains the API Documentation for all functions and classes of the XRAIDashboard package.
