@@ -7,5 +7,5 @@ nav_order: 1
 permalink: /docs/toolkit/api_documentation/uncertainty
 ---
 
-# Uncertainty
+# XRAIDashboard.uncertainty
 This module contains functions that can evaluate how uncertain the model is of its prediction.
