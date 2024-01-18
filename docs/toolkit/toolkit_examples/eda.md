@@ -1,7 +1,8 @@
 ---
 layout: default
 title: EDA
-parent: Toolkit
+parent: XRAI Toolkit Examples
+grand_parent: Toolkit
 nav_order: 2
 ---
 
@@ -49,23 +50,23 @@ This command will generate 5 HTML reports that will show different visualization
 
 ### Categorical Variable Plot
 
-![](../../assets/images/eda_01.PNG)
+![](../../../assets/images/eda_01.PNG)
 
 ### Distribution Plot (Numerical)
 
-![](../../assets/images/eda_02.PNG)
+![](../../../assets/images/eda_02.PNG)
 
 ### Correlation Heatmap (Continuous)
 
-![](../../assets/images/eda_03.PNG)
+![](../../../assets/images/eda_03.PNG)
 
 ### Scatter Plot
 
-![](../../assets/images/eda_04.PNG)
+![](../../../assets/images/eda_04.PNG)
 
 ### Violin Plot
 
-![](../../assets/images/eda_05.PNG)
+![](../../../assets/images/eda_05.PNG)
 
 ## Y-Data Profiling
 
@@ -82,12 +83,12 @@ ydata_profiling_eda2(dataset)
 This will output a comprehensive HTML report on the data as showcased below.
 
 
-![](../../assets/images/eda_06.PNG)
+![](../../../assets/images/eda_06.PNG)
 
 
-![](../../assets/images/eda_07.PNG)
+![](../../../assets/images/eda_07.PNG)
 
 
-![](../../assets/images/eda_08.PNG)
+![](../../../assets/images/eda_08.PNG)
 
 

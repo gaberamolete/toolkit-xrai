@@ -97,9 +97,6 @@ git clone https://github.com/gaberamolete/XRAIDashboard.git
 ```
 You can also download the zip file of this repository, and extract it in your preferred location.
 
-## Big Files
-Sample regression and classification models used in the notebooks are available in this [link](https://drive.google.com/drive/u/0/folders/1cdxJ5sLbLrwayxVe914w9uWR_lF2bBzy). Follow the instructions in the `README.txt`.
-
 ## Setting up the Environment 
 To easily create the environment for XRAI in your local machine, you can run the following in a command prompt or terminal.
 ```
@@ -113,7 +110,24 @@ python -m ipykernel install --user --name=XRAI
 ```
 
 ## Requirements
-The Toolkit currently runs in Python versions 3.7 to 3.9. Please ensure that you have the correct libraries and dependencies installed by checking `requirements.txt`.
+A new folder called "xrai" should be created. download the requirements via `pip3 install -r requirements.txt`. You might need to include `--timeout=1000`.
+After installation, download the XRAIDashboard package and input the following in your terminal. 
+
+```bash
+cd xrai/dist
+pip3 install XRAIDashboard-1.0-py3-none-any.whl
+```
+If this doesn't work, the package might already be pre-installed. To check, try opening any notebook and do
+
+```bash
+import XRAIDashboard
+dir(XRAIDashboard)
+
+```
+
+or run "Play with XRAI tool.ipynb" and run the cells that import functions
+
+<!-- The Toolkit currently runs in Python versions 3.7 to 3.9. Please ensure that you have the correct libraries and dependencies installed by checking `requirements.txt`.
 
 Due to some file dependencies, you will need to download these packages separately after installing those in `requirements.txt`:
 - Missing `suod` (`PyOD`) - `pip install suod`
@@ -121,4 +135,4 @@ Due to some file dependencies, you will need to download these packages separate
 - Missing dependencies of `explainerdashboard` - `pip install explainerdashboard>=0.4.3`
 - Missing dash mantine components - `pip install dash_mantine_components`
 - Missing Adversarial Robustness Toolbox - `pip install adversarial-robustness-toolbox`
-- Missing `raiwidgets` - `pip install raiwidgets>=0.30.0` -- also installs `interpret-community`
+- Missing `raiwidgets` - `pip install raiwidgets>=0.30.0` -- also installs `interpret-community` -->

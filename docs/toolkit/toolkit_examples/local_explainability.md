@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Local Explainability
-parent: Toolkit
+parent: XRAI Toolkit Examples
+grand_parent: Toolkit
 nav_order: 5
 ---
 
@@ -107,7 +108,7 @@ e2 = exp_cf(X = X, exp = exp1, total_CFs = 2, features_to_vary = ['int_rate', 't
 
 A sample output is found below:
 
-![](../../assets/images/local_exp_01-dice.png)
+![](../../../assets/images/local_exp_01-dice.PNG)
 
 In here, we are looking at a dataframe determining the income class of certain applicants for a loan. The original instance has an outcome of "0", and we are looking to find the combinations of factors to change the appplicant's outcome to 1. The algorithm finds that either a change in `workclass`, `education`, or `occupation` is needed.
 
@@ -130,9 +131,9 @@ qii_vals, fig = exp_qii(model['DT'][-1], X_test, idx, preprocessor)
 qii_vals
 ```
 
-![](../../assets/images/local_exp_02-qii1.png)
+![](../../../assets/images/local_exp_02-qii1.PNG)
 
-![](../../assets/images/local_exp_03-qii2.png)
+![](../../../assets/images/local_exp_03-qii2.PNG)
 
 ## Break Down Plots
 How can your model response be explained by the model's features? What are the most important features of the model? This function is best for why questions, or when you have a moderate number of features. Just be careful when features are correlated.
@@ -148,13 +149,13 @@ exp, obs = dalex_exp(model["DT"], X_train, y_train, X_test, idx)
 break_down(exp, obs)
 ```
 
-![](../../assets/images/local_exp_04-bd1.png)
+![](../../../assets/images/local_exp_04-bd1.PNG)
 
 A break-down graph such as the one below may leave a wanting explanation to what is happening with a particular observation of interest.
 
-![](../../assets/images/local_exp_05-bd2.png)
+![](../../../assets/images/local_exp_05-bd2.PNG)
 
-![](../../assets/images/local_exp_06-bd3.png)
+![](../../../assets/images/local_exp_06-bd3.PNG)
 
 The table that comes with the output is a tabular explanation of the graph. Each row is an explanatory variable found in the data/model, sorted descending contribution (`contribution` in the table) to the explanation. Each `variable_name` is paired with the `variable_value` of the specific point of observation, while `variable` is the concatenation of these two columns. The `cumulative` variable showcases the value starting from the `intercept`, now modified due to the `contribution` of each variable/row. The `sign` column denotes whether the `contribution` is positive or negative.
 
@@ -166,9 +167,9 @@ order = ['grade', 'loan_amnt', 'dti', 'home_ownership', 'purpose']
 break_down(exp, obs, order)
 ```
 
-![](../../assets/images/local_exp_07-abd_graph.png)
+![](../../../assets/images/local_exp_07-abd_graph.PNG)
 
-![](../../assets/images/local_exp_08-abd_table.png)
+![](../../../assets/images/local_exp_08-abd_table.PNG)
 
 ### Interactive Break Down
 The effects of an explanatory variable depends on the values of other variables. How does that affect the model response? We focus on pairwise interactions.
@@ -179,9 +180,9 @@ This may take a while depending on the model and number of variables you have.
 interactive(exp, obs, count = 10)
 ```
 
-![](../../assets/images/local_exp_09-ibd_graph.png)
+![](../../../assets/images/local_exp_09-ibd_graph.PNG)
 
-![](../../assets/images/local_exp_10-ibd_table.png)
+![](../../../assets/images/local_exp_10-ibd_table.PNG)
 
 Interaction with respect to model explanations posits that the effect or contribution of a single explanatory variable depends on the values of other explanatory variables. To showcase, below is an example of a probability table with the famous *Titanic* dataset, considering two variables: *age* and *class*. Let's look at a simplified version where *age* only has two levels: kids (0-16 years old) and adults (17+ years old). For *class*, let's just consider "2nd class" and "Other".
 
@@ -199,11 +200,11 @@ Thus, by considering the effects in a different order, we get different contribu
 
 We take advantage of this kind of analysis to showcase these interactions in break-down plots. Below, we can see that the break-down plot does a subpar job of sufficiently explaining the model effect on this particular observation, as all other factors need to account for a 0.29 difference to match the actual prediction.
 
-![](../../assets/images/local_exp_11-ibd_graphbad.png)
+![](../../../assets/images/local_exp_11-ibd_graphbad.PNG)
 
 However, if we introduce interactions to the plot, we may see that certain interactions between variables, when looked at together, seem to have a better explanation of the model effect compared to the initial break-down plot.
 
-![](../../assets/images/local_exp_12-ibd_graphgood.png)
+![](../../../assets/images/local_exp_12-ibd_graphgood.PNG)
 
 Please note that utilizing interactions is not based on any formal statistical-significance test. Thus, this may lead to false-positive findings especially in small sample sizes.
 
@@ -215,14 +216,14 @@ How would the model response change for a particular observation if only a singl
 cp_profile(exp, obs, variables = ['grade', 'loan_amnt', 'dti'])
 ```
 
-![](../../assets/images/local_exp_13-cp_numerical.png)
+![](../../../assets/images/local_exp_13-cp_numerical.PNG)
 
 ```python
 # Categorical variables
 cp_profile(exp, obs, variables = ['home_ownership', 'purpose'], var_type = 'categorical')
 ```
 
-![](../../assets/images/local_exp_14-cp_categorical.png)
+![](../../../assets/images/local_exp_14-cp_categorical.PNG)
 
 ## Waterfall Plot
 The waterfall plot explanation shows features each contributing to push the model output from the base value (the average model output over the training dataset we passed) to the model output. Features pushing the prediction higher are shown in red, those pushing the prediction lower are in blue.
@@ -231,7 +232,7 @@ The waterfall plot explanation shows features each contributing to push the mode
 shap_waterfall(shap_value_loc, idx, feature_names = feature_names, class_ind = 1, class_names = class_names)
 ```
 
-![](../../assets/images/local_exp_15-waterfall1.png)
+![](../../../assets/images/local_exp_15-waterfall1.PNG)
 
 The example above attempts to explain the likelihood of default of a loan applicant. The `f(x)` showcases the probability of the observation to be the "1" class, or in the model's terms, the likelihood to default or have a "Rejected" application. The model's mean predictions are showcased with `E[f(x)]`, a line shooting up from the bottom of the graph. As shown, while the model mostly predicts in the "0" class, or "Accepted" applications, this particular observation has a high probability of rejection, at 0.972. We can see that the main contributors of this likely rejection are the variables `num__total_rec_prncp`, `num__total_pymnt`, and `num__last_pymnt_amnt`, with +0.29, +0.17, and +0.13 respectively.
 
@@ -241,7 +242,7 @@ For classification models, we can also specify the likelihood of getting other c
 shap_waterfall(shap_value_loc, idx, feature_names = feature_names, class_ind = 0, class_names = class_names)
 ```
 
-![](../../assets/images/local_exp_16-waterfall2.png)
+![](../../../assets/images/local_exp_16-waterfall2.PNG)
 
 Using the same example as above, we can see that the `f(x)` now pertains to the likelihood to get a "0" class, or an "Accepted" application. Thus, the same observation is highly unlikely to get this class, with a 0.028 or a 1 - 0.972 probability. We can see now that the effects of each explanatory variable are now inversed, with `num__total_rec_prncp` having significant negative (or blue) effects. The `E[f(x)]` value has also flipped due to the binary nature of the model.
 
@@ -252,7 +253,7 @@ The local force plot attempts to summarize all the individual rows found in a wa
 shap_force_loc(shap_value_loc, idx, feature_names, 1, class_names)
 ```
 
-![](../../assets/images/local_exp_17-force1.png)
+![](../../../assets/images/local_exp_17-force1.PNG)
 
 Take for example the plot above, a force plot equivalent of the waterfall plot example shown previously. We know that the `f(x)` of this observation is around 0.97, as shown in bold on the right. We know that the `E[f(x)]`, now written as a `base value` is around 0.23. The force plot conveys that `total_rec_prncp` =-1.2265.. and `total_pymnt` = -1.2487.. contribute the most to that higher probability for this observation. 
 
@@ -262,15 +263,15 @@ Similarly to the waterfall plot, we can explain plots for other classes in class
 shap_force_loc(shap_value_loc, idx, feature_names, 0, class_names)
 ```
 
-![](../../assets/images/local_exp_18-force2.png)
+![](../../../assets/images/local_exp_18-force2.PNG)
 
 As with before, the `f(x)`, showcasing the likelihood for the observation to be in the "Accepted" class, is now at 0.03; the `base value` also changed accordingly. We still see the main variables `num__total_rec_prncp`, `num__total_pymnt`, and `num__last_pymnt_amnt`, just flipped (as with the color blue).
 
 ## Bar Plot
 This is another interpretation of the waterfall and local force plots, brought to you in a double-sided feature importance plot.
 
-![](../../assets/images/local_exp_19-bar1.png)
+![](../../../assets/images/local_exp_19-bar1.PNG)
 
 Compared to the first two plots, this does not give an `f(x)` nor `E[f(x)]` indicator. The picture above showcases the same observation, noting that the variables significantly contribute to a higher likelihood of the "Rejected" class. While it does not show the actual values of each variable for that observation, the local bar plot does further emphasize the individual SHAP value contributions.
 
-![](../../assets/images/local_exp_20-bar2.png)
+![](../../../assets/images/local_exp_20-bar2.PNG)
