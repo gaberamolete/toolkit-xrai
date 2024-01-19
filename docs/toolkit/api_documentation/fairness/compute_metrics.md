@@ -1,0 +1,26 @@
+---
+layout: default
+title: XRAIDashboard.fairness.fairness_algorithm.compute_metrics
+parent: XRAIDashboard.fairness
+grand_parent: XRAI API Documentation
+has_children: false
+nav_order: 4
+permalink: /docs/toolkit/api_documentation/fairness
+---
+
+# XRAIDashboard.fairness.fairness_algorithm.compute_metrics
+**[XRAIDashboard.fairness.fairness_algorithm.compute_metrics(dataset_true, dataset_pred, unprivileged_groups, privileged_groups, disp = True)](https://github.com/gaberamolete/XRAIDashboard/blob/main/fairness/fairness_algorithm.py)**
+
+
+Compute the fairness metrics for classification
+
+
+**Parameters:**
+- dataset_true (aif360.StandardDataset): The ground truth data
+- dataset_pred (aif360.StandardDataset): The prediction data
+- unprivileged_groups (List): List of unprivileged group
+- privileged_groups (List): List of privileged group
+- disp (bool): Print the metrics or not
+
+**Returns:**
+- metrics (OrderedDict): Dictionary of the different metrics and their corresponding scores.
