@@ -1,6 +1,6 @@
 ---
 layout: default
-title: XRAIDashboard.fairness.fairness
+title: XRAIDashboard.fairness.fairness.model_performance
 parent: Fairness & Performance
 grand_parent: Toolkit
 nav_order: 1
@@ -14,12 +14,12 @@ Evaluate the performance of the model on the widely used performance metrics for
 
 
 **Parameters:**
-model (dict): list of models,model object, can be sklearn, tensorflow, or keras
-test_x (pandas.DataFrame): X_test
-test_y (pandas.DataFrame): y_test
-target_feature (str): name of target variable
-protected_groups (dict): dictionary of protected groups and protected category in that group, example: {"LGU" : 'pasay','income_class':"1st" }
-reg (bool): Boolean for model type of Regression
+- model (dict): list of models,model object, can be sklearn, tensorflow, or keras
+- test_x (pandas.DataFrame): X_test
+- test_y (pandas.DataFrame): y_test
+- target_feature (str): name of target variable
+- protected_groups (dict): dictionary of protected groups and protected category in that group, example: {"LGU" : 'pasay','income_class':"1st" }
+- reg (bool): Boolean for model type of Regression
 
 **Returns:**
 - result_sum_test (pandas.DataFrame): contains the result of the model on the test set against the performance metrics

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: XRAIDashboard.fairness.fairness
+title: XRAIDashboard.fairness.fairness.fairness
 parent: Fairness & Performance
 grand_parent: Toolkit
 nav_order: 1
