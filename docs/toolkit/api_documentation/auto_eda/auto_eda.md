@@ -2,6 +2,7 @@
 layout: default
 title: XRAIDashboard.eda.auto_eda
 parent: XRAI API Documentation
+grand_parent: Toolkit
 has_children: true
 nav_order: 1
 permalink: /docs/toolkit/api_documentation/auto_eda

@@ -2,6 +2,7 @@
 layout: default
 title: XRAIDashboard.uncertainty.calibration.calib_bc
 parent: XRAIDashboard.uncertainty
+grand_parent: XRAI API Documentation
 has_children: false
 nav_order: 2
 permalink: /docs/toolkit/api_documentation/uncertainty

@@ -2,6 +2,7 @@
 layout: default
 title: XRAIDashboard.eda.auto_eda.ydata_profiling_eda2
 parent: XRAIDashboard.eda.auto_eda
+grand_parent: XRAI API Documentation
 has_children: false
 nav_order: 2
 permalink: /docs/toolkit/api_documentation/auto_eda

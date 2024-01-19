@@ -2,6 +2,7 @@
 layout: default
 title: XRAIDashboard.uncertainty.uct.uct_plot_ordered_intervals
 parent: XRAIDashboard.uncertainty
+grand_parent: XRAI API Documentation
 has_children: false
 nav_order: 23
 permalink: /docs/toolkit/api_documentation/uncertainty

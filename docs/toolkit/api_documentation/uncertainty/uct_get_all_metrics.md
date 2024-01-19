@@ -2,6 +2,7 @@
 layout: default
 title: XRAIDashboard.uncertainty.uct.uct_get_all_metrics
 parent: XRAIDashboard.uncertainty
+grand_parent: XRAI API Documentation
 has_children: false
 nav_order: 20
 permalink: /docs/toolkit/api_documentation/uncertainty
