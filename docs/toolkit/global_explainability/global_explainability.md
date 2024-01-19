@@ -3,6 +3,8 @@ layout: default
 title: Global Explainability
 parent: Toolkit
 nav_order: 6
+has_children: True
+permalink: /docs/toolkit/global_explainability
 ---
 
 # Global Explainability

@@ -3,6 +3,8 @@ layout: default
 title: Local Explainability
 parent: Toolkit
 nav_order: 5
+has_children: True
+permalink: /docs/toolkit/local_explainability
 ---
 
 # Local Explainability
