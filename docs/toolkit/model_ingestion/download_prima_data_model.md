@@ -5,7 +5,7 @@ parent: Model Ingestion
 grand_parent: Toolkit
 has_children: false
 nav_order: 2
-permalink: /docs/toolkit/api_documentation/model_ingestion
+permalink: /docs/toolkit/model_ingestion
 ---
 
 # XRAIDashboard.model_ingestion.download_prima_data_model.build_data_model

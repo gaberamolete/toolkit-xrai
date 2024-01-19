@@ -5,7 +5,7 @@ parent: Fairness & Performance
 grand_parent: Toolkit
 has_children: false
 nav_order: 1
-permalink: /docs/toolkit/api_documentation/fairness
+permalink: /docs/toolkit/fairness
 ---
 
 # XRAIDashboard.fairness.fairness.fairness
@@ -16,15 +16,15 @@ Evaluate the fairness of the model on the widely used fairness metrics for regre
 
 
 **Parameters:**
-models (dict): list of models,model object, can be sklearn, tensorflow, or keras
-x (pandas.DataFrame): X_test
-y (pandas.DataFrame): y_test
-protected_groups (dict): dictionary of protected groups and protected category in that group, example: {"LGU" : 'pasay','income_class':"1st" }
-metric (str): DI, EOP, or EOD
-threshold (float): how far from the ideal value could the score from the fairness metrics be
-xextra (pandas.DataFrame): to include any columns that was dropped by the model
-reg (bool): boolean for model type of Regression
-dashboard (bool): if this is for the dashboard purposes
+- models (dict): list of models,model object, can be sklearn, tensorflow, or keras
+- x (pandas.DataFrame): X_test
+- y (pandas.DataFrame): y_test
+- protected_groups (dict): dictionary of protected groups and protected - - category in that group, example: {"LGU" : 'pasay','income_class':"1st" }
+- metric (str): DI, EOP, or EOD
+- threshold (float): how far from the ideal value could the score from the fairness metrics be
+- xextra (pandas.DataFrame): to include any columns that was dropped by the model
+- reg (bool): boolean for model type of Regression
+- dashboard (bool): if this is for the dashboard purposes
 
 **Returns:**
 - if reg==False

@@ -5,7 +5,7 @@ parent: Fairness & Performance
 grand_parent: Toolkit
 has_children: false
 nav_order: 4
-permalink: /docs/toolkit/api_documentation/fairness
+permalink: /docs/toolkit/fairness
 ---
 
 # XRAIDashboard.fairness.fairness_algorithm.reject_option
