@@ -3,6 +3,8 @@ layout: default
 title: Model Ingestion
 parent: Toolkit
 nav_order: 1
+has_children: True
+permalink: /docs/toolkit/model_ingestion
 ---
 
 # Model Ingestion
