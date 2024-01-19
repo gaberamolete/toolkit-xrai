@@ -3,9 +3,7 @@ layout: default
 title: XRAIDashboard.fairness.outlier.visualize
 parent: Fairness & Performance
 grand_parent: Toolkit
-has_children: false
 nav_order: 3
-permalink: /docs/toolkit/fairness
 ---
 
 # XRAIDashboard.fairness.outlier.visualize

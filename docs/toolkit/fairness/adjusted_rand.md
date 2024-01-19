@@ -3,9 +3,7 @@ layout: default
 title: XRAIDashboard.fairness.cluster_metrics.adjusted_rand_index
 parent: Fairness & Performance
 grand_parent: Toolkit
-has_children: false
 nav_order: 2
-permalink: /docs/toolkit/fairness
 ---
 
 # XRAIDashboard.fairness.cluster_metrics.adjusted_rand_index

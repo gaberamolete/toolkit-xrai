@@ -3,9 +3,7 @@ layout: default
 title: XRAIDashboard.fairness.fairness_algorithm.reweighing
 parent: Fairness & Performance
 grand_parent: Toolkit
-has_children: false
 nav_order: 4
-permalink: /docs/toolkit/fairness
 ---
 
 # XRAIDashboard.fairness.fairness_algorithm.reweighing

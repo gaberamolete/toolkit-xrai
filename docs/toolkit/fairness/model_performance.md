@@ -3,9 +3,7 @@ layout: default
 title: XRAIDashboard.fairness.fairness
 parent: Fairness & Performance
 grand_parent: Toolkit
-has_children: false
 nav_order: 1
-permalink: /docs/toolkit/fairness
 ---
 
 # XRAIDashboard.fairness.fairness.model_performance

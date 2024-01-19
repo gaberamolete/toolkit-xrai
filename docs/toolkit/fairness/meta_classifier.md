@@ -2,10 +2,8 @@
 layout: default
 title: XRAIDashboard.fairness.fairness_algorithm.meta_classifier
 parent: Fairness & Performance
-grand_parent: Toolit
-has_children: false
+grand_parent: Toolkit
 nav_order: 4
-permalink: /docs/toolkit/fairness
 ---
 
 # XRAIDashboard.fairness.fairness_algorithm.meta_classifier

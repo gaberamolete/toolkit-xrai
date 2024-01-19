@@ -3,9 +3,7 @@ layout: default
 title: XRAIDashboard.model_ingestion.data_model
 parent: Model Ingestion
 grand_parent: Toolkit
-has_children: false
 nav_order: 1
-permalink: /docs/toolkit/model_ingestion
 ---
 
 # XRAIDashboard.model_ingestion.data_model.load_data_model

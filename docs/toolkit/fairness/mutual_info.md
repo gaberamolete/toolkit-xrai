@@ -3,9 +3,7 @@ layout: default
 title: XRAIDashboard.fairness.cluster_metrics.mutual_info
 parent: Fairness & Performance
 grand_parent: Toolkit
-has_children: false
 nav_order: 2
-permalink: /docs/toolkit/fairness
 ---
 
 # XRAIDashboard.fairness.cluster_metrics.mutual_info
