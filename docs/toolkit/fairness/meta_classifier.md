@@ -1,18 +1,18 @@
 ---
 layout: default
-title: XRAIDashboard.fairness.fairness_algorithm.reweighing
-parent: XRAIDashboard.fairness
-grand_parent: XRAI API Documentation
+title: XRAIDashboard.fairness.fairness_algorithm.meta_classifier
+parent: Fairness & Performance
+grand_parent: Toolit
 has_children: false
 nav_order: 4
 permalink: /docs/toolkit/api_documentation/fairness
 ---
 
-# XRAIDashboard.fairness.fairness_algorithm.reweighing
-**[XRAIDashboard.fairness.fairness_algorithm.reweighing(model, train_data, test_data, target_feature, protected, privileged_classes, favorable_classes=[1.0])](https://github.com/gaberamolete/XRAIDashboard/blob/main/fairness/fairness_algorithm.py)**
+# XRAIDashboard.fairness.fairness_algorithm.meta_classifier
+**[XRAIDashboard.fairness.fairness_algorithm.meta_classifier(model, train_data, test_data, target_feature, protected, privileged_classes, favorable_classes=[1.0])](https://github.com/gaberamolete/XRAIDashboard/blob/main/fairness/fairness_algorithm.py)**
 
 
-Executes use of AI Fairness 360's Reweighing algorithm. Reweighing is a preprocessing technique that Weights the examples in each (group, label) combination differently to ensure fairness before classification.
+Executes use of AI Fairness 360's Meta Classifier algorithm. The meta algorithm here takes the fairness metric as part of the input and returns a classifier optimized w.r.t. that fairness metric.
 
 
 **Parameters:**
@@ -25,6 +25,6 @@ Executes use of AI Fairness 360's Reweighing algorithm. Reweighing is a preproce
 - favorable_classes (list): a list of favorable classes in the target feature, restricted to n-1 length, where n is the number of classes
 
 **Returns:**
-- X_tr (np.array): Transformed X_train
+None
 
 *Note: This outputs a comparison (w/ visualization) of the score of metrics before and after the method was used.*

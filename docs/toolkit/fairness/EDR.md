@@ -1,18 +1,18 @@
 ---
 layout: default
-title: XRAIDashboard.fairness.fairness_algorithm.reject_option
-parent: XRAIDashboard.fairness
-grand_parent: XRAI API Documentation
+title: XRAIDashboard.fairness.fairness_algorithm.exponentiated_gradient_reduction
+parent: Fairness & Performance
+grand_parent: Toolkit
 has_children: false
 nav_order: 4
 permalink: /docs/toolkit/api_documentation/fairness
 ---
 
-# XRAIDashboard.fairness.fairness_algorithm.reject_option
-**[XRAIDashboard.fairness.fairness_algorithm.reject_option(model, train_data, test_data, target_feature, protected, privileged_classes, favorable_classes=[1.0])](https://github.com/gaberamolete/XRAIDashboard/blob/main/fairness/fairness_algorithm.py)**
+# XRAIDashboard.fairness.fairness_algorithm.exponentiated_gradient_reduction
+**[XRAIDashboard.fairness.fairness_algorithm.exponentiated_gradient_reduction(model, train_data, test_data, target_feature, protected, privileged_classes, favorable_classes=[1.0])](https://github.com/gaberamolete/XRAIDashboard/blob/main/fairness/fairness_algorithm.py)**
 
 
-Executes use of AI Fairness 360's Meta Classifier algorithm. The meta algorithm here takes the fairness metric as part of the input and returns a classifier optimized w.r.t. that fairness metric.
+Executes use of AI Fairness 360's Exponentiated Gradient Reduction algorithm. Exponentiated gradient reduction is an in-processing technique that reduces fair classification to a sequence of cost-sensitive classification problems, returning a randomized classifier with the lowest empirical error subject to fair classification constraints.
 
 
 **Parameters:**

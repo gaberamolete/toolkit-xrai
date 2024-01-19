@@ -1,8 +1,8 @@
 ---
 layout: default
 title: XRAIDashboard.fairness.cluster_metrics.mutual_info
-parent: XRAIDashboard.fairness
-grand_parent: XRAI API Documentation
+parent: Fairness & Performance
+grand_parent: Toolkit
 has_children: false
 nav_order: 2
 permalink: /docs/toolkit/api_documentation/fairness

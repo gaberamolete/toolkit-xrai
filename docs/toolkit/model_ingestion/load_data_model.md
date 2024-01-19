@@ -1,8 +1,8 @@
 ---
 layout: default
 title: XRAIDashboard.model_ingestion.data_model
-parent: XRAIDashboard.model_ingestion
-grand_parent: XRAI API Documentation
+parent: Model Ingestion
+grand_parent: Toolkit
 has_children: false
 nav_order: 1
 permalink: /docs/toolkit/api_documentation/model_ingestion
