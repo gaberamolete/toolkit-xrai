@@ -3,6 +3,8 @@ layout: default
 title: Stability
 parent: Toolkit
 nav_order: 7
+has_children: True
+permalink: /docs/toolkit/stability
 ---
 
 # Stability
