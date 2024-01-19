@@ -3,6 +3,7 @@ layout: default
 title: XRAIDashboard.uncertainty.calibration.calib_bc
 parent: Uncertainty
 grand_parent: Toolkit
+has_children: false
 nav_order: 2
 ---
 

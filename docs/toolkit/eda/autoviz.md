@@ -3,7 +3,7 @@ layout: default
 title: XRAIDashboard.eda.auto_eda.autoviz_eda2
 parent: EDA
 grand_parent: Toolkit
-\nav_order: 1
+nav_order: 1
 ---
 
 # XRAIDashboard.eda.auto_eda.autoviz_eda2
