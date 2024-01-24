@@ -283,7 +283,7 @@ The figure below is an example of how a DSAI team might use the XRAI Methodology
 5. After feedback, the DSAI System Owner works with the Developers to make changes 
 6. After revisions, the DSAI system results can now be shared with external stakeholders 
 
-![](../../../assets/images/assessment_01-flowchart.png)
+![](../../assets/images/assessment_01-flowchart.png)
 
 ## Integrating the XRAI Methodology with Existing Risk Management
 Outside of the XRAI Methodology exists multiple DSAI risk management practices across a multitude of industries, yet a common standard for applying these elements have not particularly been established, as institutions may be at different maturity stages in adopting and specifying risk management processes to DSAI systems. The following section aims to highlight common observations across elements of risk management for DSAI systems in corporate settings. 

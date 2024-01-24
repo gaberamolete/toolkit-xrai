@@ -255,7 +255,7 @@ Drift detection methods that can be used for `stattest` and other equivalent par
 - `TVD`: Total-Variation-Distance, only categorical. Returns p_value drift detected when less than threshold (default is 0.05).
 A combination of these tests are used if `stattest` and other equivalent parameters are not explicitly specified. Accessing the HTML file gives you this view:
 
-![](../../../assets/images/stability_01-ddr.PNG)
+![](../../assets/images/stability_01-ddr.PNG)
 
 You can also specify a single column and check it for data drift:
 
@@ -267,7 +267,7 @@ data_drift_report_col.save_html(f'assets/reports/data_drift_report_col.html')
 
 Opening this will give you this view:
 
-![](../../../assets/images/stability_02-ddrc.PNG)
+![](../../assets/images/stability_02-ddrc.PNG)
 
 We also have separate functions for verifying data drift in deployed models or OOT data.
 
@@ -278,7 +278,7 @@ data_drift_test.save_html(f'assets/reports/data_drift_test.html')
 
 This compares the distribution of each column in the current dataset to the reference and tests the number and share of drifting features against a defined condition.
 
-![](../../../assets/images/stability_03-ddt.PNG)
+![](../../assets/images/stability_03-ddt.PNG)
 
 You can also specify a single column and check it for data drift:
 
@@ -287,7 +287,7 @@ data_drift_test_col, ddt = data_drift_column_test(current_data,reference_data,co
 data_drift_test_col.save_html(f'assets/reports/data_drift_test_col.html')
 ```
 
-![](../../../assets/images/stability_04-ddtc.PNG)
+![](../../assets/images/stability_04-ddtc.PNG)
 
 ## Data Quality
 With our toolkit, you can explore and track various dataset and feature statistics.
@@ -311,7 +311,7 @@ With this report under data quality, our function:
 - If categorical, calculates number of values in list / out of the list / not found in defined column
 - If numerical, calculates number and share of values in specified range / out of range in defined column, and plots distributions
 
-![](../../../assets/images/stability_05-dqr.PNG)
+![](../../assets/images/stability_05-dqr.PNG)
 
 This can also be done for a single column.
 
@@ -320,7 +320,7 @@ data_quality_report_col, _ = data_quality_column_report(current_data,reference_d
 data_quality_report_col.save_html(f'assets/data_quality_report_col.html')
 ```
 
-![](../../../assets/images/stability_06-dqrc.PNG)
+![](../../assets/images/stability_06-dqrc.PNG)
 
 We also have separate functions for verifying data quality in deployed models or OOT data. For all columns in a dataset, the `data_quality_dataset_test` function:
 - Tests number of rows and columns against reference or defined condition
@@ -337,7 +337,7 @@ data_quality_test, dqt = data_quality_dataset_test(current_data,reference_data,c
 data_quality_test.save_html(f'assets/reports/data_quality_test.html')
 ```
 
-![](../../../assets/images/stability_07-dqt.PNG)
+![](../../assets/images/stability_07-dqt.PNG)
 
 This can also be done for a single column.
 
@@ -345,7 +345,7 @@ This can also be done for a single column.
 data_quality_test_col, dqt = data_quality_column_test(current_data,reference_data,col)
 ```
 
-![](../../../assets/images/stability_08-dqtc.PNG)
+![](../../assets/images/stability_08-dqtc.PNG)
 
 ## Classification Report and Tests
 We also have functions that can compare the performance of classification models. For a classification model, the report generated from `classification_performance_report` shows the following:
@@ -365,7 +365,7 @@ classification_report, cpr = classification_performance_report(current_data,refe
 classification_report.save_html(f'assets/reports/classification_report.html')
 ```
 
-![](../../../assets/images/stability_09-cr.PNG)
+![](../../assets/images/stability_09-cr.PNG)
 
 The `classification_performance_test` function computes the following tests on classification data, failing if +/- a percentage (%) of scores over reference data is achieved:
 - Accuracy, Precision, Recall, F1 on the whole dataset
@@ -386,7 +386,7 @@ classification_test, cpt = classification_performance_test(current_data,referenc
 classification_test.save_html(f'assets/reports/classification_test.html')
 ```
 
-![](../../../assets/images/stability_10-ct.PNG)
+![](../../assets/images/stability_10-ct.PNG)
 
 ## Regression Report and Tests
 We have similar functions for regression models. For a regression model, the report generated from `regression_performance_report` shows the following:
@@ -405,7 +405,7 @@ regression_report, rpr = regression_performance_report(current_data,reference_da
 regression_report.save_html(f'assets/reports/regression_report.html')
 ```
 
-![](../../../assets/images/stability_11-rr.PNG)
+![](../../assets/images/stability_11-rr.PNG)
 
 The `classification_performance_test` function computes the following tests on regression data, failing if +/- a percentage (%) of scores over reference data is achieved:
 - Mean Absolute Error (MAE)
@@ -428,7 +428,7 @@ regression_test, rpt = regression_performance_test(current_data,reference_data,c
 regression_test.save_html(f'assets/reports/regression_test.html')
 ```
 
-![](../../../assets/images/stability_12-rt.PNG)
+![](../../assets/images/stability_12-rt.PNG)
 
 ## Target Drift
 You can detect and explore changes in the target function (prediction) and detect distribution drift.
@@ -441,11 +441,11 @@ target_drift_report, tdr = target_drift_report(current_data,reference_data,colum
 target_drift_report.save_html(f'assets/reports/target_drift_report.html')
 ```
 
-![](../../../assets/images/stability_13-tdc.PNG)
+![](../../assets/images/stability_13-tdc.PNG)
 
 This can also be done for regression models.
 
-![](../../../assets/images/stability_14-tdr.PNG)
+![](../../assets/images/stability_14-tdr.PNG)
 
 ## Cramer-von-Mises
 Cramer-von Mises (CVM) data drift detector, which tests for any change in the distribution of continuous univariate data. This works for both regression and classification use cases. For multivariate data, a separate CVM test is applied to each feature, and the obtained p-values are aggregated via the Bonferroni or False Discovery Rate (FDR) corrections.
@@ -559,7 +559,7 @@ dc, ks = decile_table(train_data['loan_status'], train_data['prob'])
 dc
 ```
 
-![](../../../assets/images/stability_15-decile_table.PNG)
+![](../../assets/images/stability_15-decile_table.PNG)
 
 Other than the decile table, we can generate charts to help verify the true the KS statistic.
 - Gain Chart
@@ -575,10 +575,10 @@ fig4 = model_selection_by_ks_statistic({'DT': dc})
 
 fig1, fig2, fig3, fig4
 ```
-![](../../../assets/images/stability_16-gain_chart.PNG)
+![](../../assets/images/stability_16-gain_chart.PNG)
 
-![](../../../assets/images/stability_17-lift_chart.PNG)
+![](../../assets/images/stability_17-lift_chart.PNG)
 
-![](../../../assets/images/stability_18-lift_decile_chart.PNG)
+![](../../assets/images/stability_18-lift_decile_chart.PNG)
 
-![](../../../assets/images/stability_19-ks_chart.PNG)
+![](../../assets/images/stability_19-ks_chart.PNG)

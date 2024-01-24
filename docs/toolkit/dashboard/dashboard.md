@@ -302,7 +302,7 @@ elif not reg:
 This will generate a local link that you can use to run the dashboard on a browser. Below is a short gif that showcases what the dashboard should look like upon running.
 
 <!-- <p align="center">
-  <img src="../../../assets/images/XRAI_Teaser - shortened.gif">
+  <img src="../../assets/images/XRAI_Teaser - shortened.gif">
 </p> -->
 
-![](../../../assets/images/XRAI_Teaser - shortened.gif)
+![](../../assets/images/XRAI_Teaser - shortened.gif)

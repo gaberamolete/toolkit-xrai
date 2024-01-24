@@ -76,7 +76,7 @@ if not reg:
 Once the score for each metric is extracted, use the `visualisation` function to visualise the scores. Ideally, we want the scores to be less than zero, signifying that the model is robust and safe from any privacy risks.
 
 
-![](../../../assets/images/robustness-01.PNG)
+![](../../assets/images/robustness-01.PNG)
 
 ## Membership Inference Attack (For Regression Only)
 
@@ -97,4 +97,4 @@ if reg:
 The resulting precision and recall shows how accurate the adversarial model in extracting the data. This will be immensely helpful in preventing the leakage of confidential data used in training the model.
 
 
-![](../../../assets/images/robustness-02.PNG)
+![](../../assets/images/robustness-02.PNG)
