@@ -31,20 +31,20 @@ For each applicant, you have both their actual loan outcome (default or not) and
 ## Step 2: Decile Calculation  
 1. Sort the dataset based on the predicted probabilities in ascending order.
    
-```python
-# Assuming that the table above is stored in df as a pandas.DataFrame
-df = df.sort_values("Predicted Probability", ascending = False)
-```
+    ```python
+    # Assuming that the table above is stored in df as a pandas.DataFrame
+    df = df.sort_values("Predicted Probability", ascending = False)
+    ```
 
 2. Divide the dataset into ten equal parts (deciles), with each decile containing approximately 10% of the data.
 
-```python
-# Assuming that the pandas package is already imported as pd 
-df["Decile"] = pd.qcut(df["Predicted Probability"], q = 10, labels = list(range(10, 0, -1)))
+    ```python
+    # Assuming that the pandas package is already imported as pd 
+    df["Decile"] = pd.qcut(df["Predicted Probability"], q = 10, labels = list(range(10, 0, -1)))
 
-# Plot the deciles using seaborn as sns
-sns.countplot(x = "Decile", data = df, order = range(1, 11), palette = 'Blues_r')
-```  
+    # Plot the deciles using seaborn as sns
+    sns.countplot(x = "Decile", data = df, order = range(1, 11), palette = 'Blues_r')
+    ```  
 
 ## Step 3: Analysis 
 For each decile, calculate various metrics to evaluate the model's performance: 
