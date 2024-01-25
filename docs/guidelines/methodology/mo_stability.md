@@ -16,11 +16,11 @@ nav_order: 7
 {:toc}
 
 Stability refers to the reliability and consistency of a model's predictions when faced with variations or changes in input data, model parameters, or other factors. A stable model is less affected by minor data fluctuations, making it robust, better at generalizing to new data, and more interpretable. Achieving stability involves techniques such as: 
-- **Robust data preprocessing**, such as outlier detection and handling, missing data imputation, and data scaling, can make models less sensitive to variations in input data 
-- **Regularization methods**, like L1 (Lasso) and L2 (Ridge) regularization can reduce model complexity, preventing overfitting 
-- **Ensemble methods**, such as bagging and boosting, combine multiple models to reduce variance and increase stability 
-- **Hyperparameter tuning**, with grid search or random search,can lead to more stable model performance 
-- **Cross-validation**, like k-fold cross-validations, helps assess a model’s stability through evaluating its performance on multiple data subsets 
+- **Robust data preprocessing**, such as [outlier detection and handling](https://scikit-learn.org/stable/modules/outlier_detection.html), [missing data imputation](https://scikit-learn.org/stable/modules/impute.html), and [data scaling](https://machinelearningmastery.com/standardscaler-and-minmaxscaler-transforms-in-python/), can make models less sensitive to variations in input data 
+- **Regularization methods**, like [L1 (Lasso) and L2 (Ridge) regularization](https://neptune.ai/blog/fighting-overfitting-with-l1-or-l2-regularization) can reduce model complexity, preventing overfitting 
+- **Ensemble methods**, such as [bagging and boosting](https://towardsdatascience.com/ensemble-learning-bagging-and-boosting-23f9336d3cb0), combine multiple models to reduce variance and increase stability 
+- **Hyperparameter tuning**, with [grid search or random search](https://machinelearningmastery.com/hyperparameter-optimization-with-random-search-and-grid-search/),can lead to more stable model performance 
+- **Cross-validation**, like [k-fold cross-validations](https://scikit-learn.org/stable/modules/cross_validation.html), helps assess a model’s stability through evaluating its performance on multiple data subsets 
 
 Stable models are crucial in applications where reliability and consistency are essential, such as for fairness, interpretability, and making critical decisions based on machine learning predictions. Here are some metrics and tests related to stability: 
 
@@ -42,6 +42,8 @@ The formula to calculate PSI involves comparing the expected and observed freque
 
 The PSI value indicates the level of change between the populations or time periods being compared.  Generally, a lower PSI indicates stability or minimal change, while a higher PSI suggests that there has been a significant shift in the distribution of the variable. The threshold for what constitutes a "significant" change can depend on the context and the specific application.
 
+To implement this into your code, you can simply utilized the [DropHighPSIFeatures](https://feature-engine.trainindata.com/en/latest/user_guide/selection/DropHighPSIFeatures.html) of the feature-engine package. From that class, you can extract the PSI values per feature and the features to drop.
+
 ## Page-Hinkley 
 Page-Hinkley is a statistical method used for change detection in time-series data. It's particularly useful for identifying abrupt or sudden changes in the statistical properties of a sequence of observations. This method is commonly employed in fields such as quality control, anomaly detection, and surveillance, where detecting unexpected shifts in data patterns is crucial. 
 
@@ -61,6 +63,8 @@ As new data points arrive, calculate the absolute deviation between the observed
 - The location and timing of this change point can help identify when the data behavior shifted significantly. 
 - The Page-Hinkley method is capable of quickly detecting abrupt changes in a time series. It's advantageous for scenarios where immediate action is needed based on detecting sudden shifts. However, like any statistical method, it has limitations, such as sensitivity to parameter choices and its reliance on a fixed reference value.
 
+Scikit Multiflow offers a function that can easily extract the Page Hinkley values.  For more information, click this [link](https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.drift_detection.PageHinkley.html).
+
 ## Kolmogorov-Smirnov (K-S) Test 
 The K-S test is a nonparametric test that compares the cumulative distributions of two data sets, in this case, the training data and the post-training data. To evaluate, the expected frequencies for each cell under the assumption of independence (i.e., if there is no association between the variables).  
 
@@ -73,6 +77,8 @@ Determine the CDF of the specified theoretical distribution. The form of the CDF
 ![](../../../assets/images/methodology-mo-stability_03-ks2.PNG) 
 
 Where D is the K-S statistic, ECDF(x) is the value of the ECDF at data point x, and CDF(x) is the value of the CDF at data point x. Finally, take the maximum absolute difference across all data points, then determine the critical value for the K-S statistic based on your chosen significance level (�α) and the sample size. 
+
+To extract the KS Test values, you can utilize the Scipy's [kstest](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html) method.
 
 ## Chi-Square Test 
 The chi-square test is a statistical method used to determine if there's a significant association between categorical variables. It assesses whether the observed frequencies in a contingency table differ significantly from the expected frequencies, assuming the variables are independent. This test is used to analyze relationships between categorical variables, select relevant features for machine learning, verify feature independence, and perform goodness-of-fit tests. In machine learning, it helps identify significant associations between variables and provides insights into data patterns.  
@@ -91,6 +97,8 @@ Where X2 is the chi-squared statistic, Oij is the observed frequency (count) for
 
 It is used for categorical data. While useful, it's essential to interpret results carefully and consider other methods for more complex scenarios. 
 
+Similar to KS test, the Scipy package also have a method for Chi-Square test, named [chisquare](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chisquare.html).
+
 ## Z-test 
 The z-test is a statistical hypothesis test used to assess whether a sample mean differs significantly from a known population mean when the population standard deviation is known. It compares the difference between the sample mean and the population mean in terms of standard errors. It is used for categorical data only. 
 
@@ -107,6 +115,8 @@ The formula for the one-sample z-test is as follows:
 
 Where Z is the z-test statistic, ˉXˉ is the sample mean, μ is the population mean (the mean under the null hypothesis), σ is the population standard deviation (known), and n is the sample size. With this, calculate the sample mean ˉXˉ and the sample size n from your data. Specify the population mean μ under the null hypothesis and the population standard deviation σ. Finally, calculate the z-test statistic using the formula above. Determine the critical value from the standard normal distribution (Z-distribution) based on your chosen significance level (𝛼) and the test type (one-tailed or two-tailed). 
 
+To perform z-test in python, you can leverage the [ztest](https://www.statsmodels.org/dev/generated/statsmodels.stats.weightstats.ztest.html) function by the statsmodels package.
+
 ## Wasserstein Distance 
 The Wasserstein Distance, also known as the Earth Mover's Distance (EMD) or Kantorovich-Rubinstein metric, is a measure of dissimilarity between probability distributions. It quantifies the "cost" of transforming one distribution into another by computing the minimum amount of work needed to move mass from each point in one distribution to its corresponding point in the other distribution. 
 
@@ -121,6 +131,8 @@ Where 𝛾 is a transportation plan, which is a matrix where γij represents the
 
 Calculating the Wasserstein distance involves solving a linear programming problem to find the transportation plan 𝛾 that minimizes the total cost while satisfying the constraints. This can be done using optimization algorithms like the simplex algorithm or interior-point methods. 
 
+For the extraction of the Wasserstein Distance, you can use Scipy's [wasserstein_distance](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wasserstein_distance.html) method.
+
 ## Kullback-Leibler Divergence 
 The Kullback-Leibler (KL) divergence measures how one probability distribution differs from another. It quantifies information lost when approximating one distribution with another.  
 
@@ -130,7 +142,9 @@ The KL Divergence from one distribution to another is calculated as:
 
 Where P(i) and Q(i) are the probabilities associated with event i in distributions P and Q, respectively. 
 
-The sum is taken over all events in the distributions. KL divergence is used to assess how robust models, algorithms, or data transformations are against changes in input data distribution. It helps detect domain shifts, distributional changes, noise impact, and more. A lower KL divergence indicates greater similarity and stability between distributions. KL divergence aids in understanding how models behave under different conditions, ensuring reliability and informed decision-making in machine learning. 
+The sum is taken over all events in the distributions. KL divergence is used to assess how robust models, algorithms, or data transformations are against changes in input data distribution. It helps detect domain shifts, distributional changes, noise impact, and more. A lower KL divergence indicates greater similarity and stability between distributions. KL divergence aids in understanding how models behave under different conditions, ensuring reliability and informed decision-making in machine learning.
+
+The Scipy package also have a method for KL Divergence. Click this [link](https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.kl_div.html) for more information.
 
 ## Jensen-Shannon Distance 
 The Jensen-Shannon distance (JSD) is a smoothed and symmetrized version of the Kullback-Leibler divergence, measuring the similarity or difference between probability distributions. 
@@ -147,7 +161,9 @@ The JSD ranges from 0 (when P and Q are identical) to 1 (when P and Q are comple
 
 ![](../../../assets/images/methodology-mo-stability_11-js3.PNG)
 
-and the triangle inequality, making it a useful metric for comparing probability distributions. A smaller JSD signifies greater similarity and stability between distributions. JSD aids in comprehending model behavior under diverse conditions, contributing to reliable and informed decision-making in machine learning applications. 
+and the triangle inequality, making it a useful metric for comparing probability distributions. A smaller JSD signifies greater similarity and stability between distributions. JSD aids in comprehending model behavior under diverse conditions, contributing to reliable and informed decision-making in machine learning applications.
+
+To solve for the JSD values, Scipy package also have the [jensenshannon](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.jensenshannon.html) method.
 
 ## Anderson-Darling Test 
 The Anderson-Darling test is a statistical hypothesis test used to assess whether a given data sample comes from a specific distribution, typically the normal distribution. It evaluates the goodness-of-fit between the observed data and a theoretical distribution by computing a test statistic based on the differences between observed and expected cumulative distribution functions (CDFs). 
@@ -166,6 +182,8 @@ To calculate, arrange the data in ascending order to obtain X1≤X2≤…≤Xn. 
 
 The Anderson-Darling test is commonly used to assess the goodness-of-fit of data to a theoretical distribution, especially when you want to detect deviations from the distribution in the tails. 
 
+For this statistical test, Scipy also have a specific [method](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.anderson.html) to use for the extraction of the values.
+
 ## Fisher’s Exact Test 
 Fisher's Exact Test is a statistical test used to determine the significance of association between two categorical variables in a 2x2 contingency table. It calculates the probability of observing a distribution of frequencies as extreme as or more extreme than the one actually observed, assuming that the variables are independent. 
 
@@ -180,6 +198,8 @@ Fisher's Exact Test involves testing two hypotheses:
 - Alternative Hypothesis (H1): There is an association between the two categorical variables; the observed distribution is not due to chance. 
 
 The probability of observing the data in the contingency table under the null hypothesis (H0) is calculated using the hypergeometric probability formula. This test aids in detecting shifts in data characteristics, changes in model behavior, and variations due to input changes. By using this test, practitioners can make informed decisions, monitor stability, and identify potential concerns in their machine learning applications. 
+
+For this statistical test, Scipy also have a specific [method](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.fisher_exact.html) to use for the extraction of the values.
 
 ## Cramer-von-Mises 
 The Cramér-von Mises (CvM) test is a statistical test used in machine learning and statistics to assess the goodness of fit of a model's predictions to a particular probability distribution. It is a non-parametric test that measures the discrepancy between the empirical distribution of a sample and the cumulative distribution function (CDF) of a theoretical distribution, often the normal distribution. 
@@ -209,6 +229,8 @@ H0 typically assumes that the data follows the theoretical distribution, so a si
 
 The Cramér-von Mises test can be applied to evaluate whether a model's predictions conform to a specific distribution, which is a useful diagnostic tool for understanding the model's behavior. 
 
+For this statistical test, Scipy also have a specific [method](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.cramervonmises.html) available for use.
+
 ## G-Test 
 The G-test, also known as the G-statistic or G-squared statistic, is a statistical test used in machine learning and statistics to assess the association or independence between categorical variables in contingency tables. It is commonly used for hypothesis testing when you have categorical data and want to determine if there is a significant relationship between two or more categorical variables. 
 
@@ -221,6 +243,8 @@ Where Oij is the observed frequency in cell (i, j) of the contingency table, Eij
 The G-test statistic measures how the observed frequencies Oij differ from the expected frequencies Eij under the assumption of independence between the categorical variables. A larger G-test statistic indicates a larger discrepancy between observed and expected frequencies, suggesting a stronger association between the variables. 
 
 To assess the significance of the G-test statistic, you typically compare it to the chi-squared distribution with degrees of freedom determined by the dimensions of the contingency table. The associated p-value can be calculated to determine whether the observed association is statistically significant, allowing you to make conclusions about the independence or association of the categorical variables. 
+
+For this statistical test, Scipy also have a specific [method](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html) available for use.
 
 ## Hellinger 
 The Hellinger distance or Hellinger test is a statistical measure used to quantify the similarity or distance between probability distributions. It is often applied in machine learning and statistics to assess the similarity or dissimilarity between two probability distributions, such as comparing the distribution of observed data to an expected or reference distribution. 
@@ -235,6 +259,8 @@ Where H(P,Q) is the Hellinger distance between distributions P and Q, and pi and
 
 The Hellinger distance ranges from 0 (indicating identical distributions) to 1 (indicating completely dissimilar distributions); smaller values suggest greater similarity. When using the Hellinger distance in machine learning, you would typically compare it to a threshold or use it as part of a larger evaluation or decision-making process, depending on the specific task or application. 
 
+Once you have two probability distributions as input, you can utilize the [hellinger](https://tedboy.github.io/nlps/generated/generated/gensim.matutils.hellinger.html) method from the gensim package.
+
 ## Mann-Whitney U-Rank Test 
 The Mann-Whitney U test, also known as the Mann-Whitney-Wilcoxon test, Wilcoxon rank-sum test, or Wilcoxon-Mann-Whitney test, is a non-parametric statistical test used to determine whether two independent groups come from the same population or have significantly different distributions. It is a valuable tool in machine learning for comparing two groups or samples when the assumptions of normality or equal variances, required for parametric tests like the t-test, are not met. 
 
@@ -243,6 +269,8 @@ To conduct the Mann-Whitney U Test, we first pool the data from both groups into
 ![](../../../assets/images/methodology-mo-stability_18-mwu.PNG)
 
 Where R_i is the sum of ranks for group i, and n_i is the sample size of group i. If U is small, it suggests that observation in one group tends to have lower ranks than in the other group. We also compare the calculated U statistics to critical values from the U distribution or use a significance level. We reject the null hypothesis of having no difference between two groups if there is a significant difference. Note that this only assesses the difference in distribution shape and central tendency but does not provide info about the difference’s size. 
+
+For this statistical test, Scipy also have a specific [method](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html) available for use.
 
 ## Energy Distance 
 Energy distance is a statistical measure used to quantify the dissimilarity or discrepancy between two probability distributions. It is a metric that assesses how different two datasets or distributions are from each other in a non-parametric and distribution-free manner. Energy distance is often used in machine learning and statistics for various purposes, including data analysis and model comparison. 
@@ -261,6 +289,8 @@ and the Laplacian kernel
 
 Where ∫∫ represents the integral over the entire space of possible values. 
 
+For this statistical test, Scipy also have a specific [method](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.energy_distance.html) available for use.
+
 ## Epps-Singleton Test 
 The Epps-Singleton test is a statistical test used to determine whether two samples come from the same probability distribution. It is particularly useful when comparing two independent samples to assess their similarity or dissimilarity in a non-parametric and distribution-free manner. The test was developed as an alternative to the classical two-sample tests, such as the t-test or Wilcoxon-Mann-Whitney U test, which rely on specific distributional assumptions. 
 
@@ -269,6 +299,8 @@ The steps to conduct the Epps-Singleton Test are very similar to the U test. The
 ![](../../../assets/images/methodology-mo-stability_22-es.PNG)
 
 Where n_1 and n_2 are the sample sizes of the two groups, and w_i and w_j are the ordered values from the two samples. Essentially, we are computing the log-likelihood ratio between the two samples; the distribution approaches the chi-squared distribution as the sample size increases. 
+
+For this statistical test, Scipy also have a specific [method](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.epps_singleton_2samp.html) available for use.
 
 ## T-Test 
 The t-test is a statistical hypothesis test used to determine whether there is a significant difference between the means of two groups or samples. It is a widely used parametric test in statistics and can be applied in various ways within the field of machine learning. The t-test is particularly valuable when comparing the means of two groups to assess whether they are statistically distinguishable. 
@@ -294,6 +326,8 @@ A positive t-value suggests that the mean of the first sample is larger, while a
 
 A positive t-value means that the sample mean is larger than the hypothesized population mean.  
 
+For this statistical test, Scipy also have a specific [method](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html) available for use.
+
 ## Empirical Maximum Mean Discrepancy 
 Empirical Maximum Mean Discrepancy (MMD) is a statistical measure used to quantify the dissimilarity or discrepancy between two sets of data points or probability distributions. It is a non-parametric metric that assesses how different two datasets or distributions are from each other in a data-driven manner. MMD is particularly valuable in machine learning for comparing and contrasting different datasets, domains, or probability distributions. 
 
@@ -313,3 +347,5 @@ The Total Variation Distance between two probability distributions P and Q is de
 Where P(x) and Q(x) are the probability mass (in the case of discrete distributions) or probability density (in the case of continuous distributions) at point x. The summation is taken over all possible values of x for discrete distributions or integrated over the entire support for continuous distributions. 
 
 TVD scores range from 0 to 1, with 0 indicating that the two distributions are identical and 1 indicating that they are completely dissimilar. Smaller TVD values suggest greater similarity between distributions, while larger values suggest greater dissimilarity. All in all, TVD provides a straightforward and intuitive measure of dissimilarity that does not assume specific distributional forms for the data. 
+
+For this statistical test, Forest-Benchmarking package offers a [method](https://forest-benchmarking.readthedocs.io/en/latest/autogen/forest.benchmarking.distance_measures.total_variation_distance.html) for the extraction of values.
